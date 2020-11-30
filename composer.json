@@ -1,0 +1,33 @@
+{
+    "name": "litstack/translations",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cbl",
+            "email": "lennart.carbe@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Litstack\\Translations\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/php"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Litstack\\Translations\\TranslationsServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
