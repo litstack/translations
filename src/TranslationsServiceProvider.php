@@ -26,6 +26,7 @@ class TranslationsServiceProvider extends TranslationServiceProvider
      */
     public function register()
     {
+        $this->config();
         $this->app->register(RouteServiceProvider::class);
         $this->registerLoader();
         $this->registerClearCommand();
@@ -41,6 +42,23 @@ class TranslationsServiceProvider extends TranslationServiceProvider
 
             return $trans;
         });
+    }
+
+    /**
+     * Register and merge config.
+     *
+     * @return void
+     */
+    protected function config()
+    {
+        $this->publishes([
+            __DIR__.'/../config' => config_path(),
+        ], 'config');
+
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/lit-translations.php',
+            'lit-translations'
+        );
     }
 
     /**

@@ -43,7 +43,7 @@ class LangConfig extends CrudConfig
      */
     public function routePrefix()
     {
-        return 'translations';
+        return config('lit-translations.route-prefix');
     }
 
     /**
