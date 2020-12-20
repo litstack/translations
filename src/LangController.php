@@ -18,7 +18,11 @@ class LangController extends CrudController
      */
     public function authorize(Authorizable $user, string $operation, $id = null): bool
     {
-        return true;
+        if (is_null($group = config('lit-translations.permission-group'))) {
+            return true;
+        }
+
+        return $user->can("{$operation} {$group}");
     }
 
     /**

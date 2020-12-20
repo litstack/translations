@@ -13,4 +13,16 @@ return [
     */
 
     'route_prefix' => 'translations',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Permission Group
+    |--------------------------------------------------------------------------
+    |
+    | The name of the permission group, that guards the translations crud.
+    | Set to `NULL` to allow any litstack user to manage translations.
+    |
+    */
+
+    'permission-group' => 'translations',
 ];
